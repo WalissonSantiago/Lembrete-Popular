@@ -1,0 +1,136 @@
+* {
+    margin:0 auto;
+    font-family:sans-serif;
+    box-sizing:border-box;
+}
+
+
+body {
+    background-image:url(/assets/back.jpg);
+    background-size:100%;
+    background-attachment:fixed;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+
+.container {
+    max-width:720px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:0 14px;
+}
+
+
+.logo {
+    max-width:420px;
+    max-height:230px;
+    display:flex;
+    margin-bottom:20px;
+    border-radius:35px;
+}
+
+
+#title {
+    text-align:center;
+    color:#000;
+    font-size:45px;
+    margin:10px;
+    margin-top:170px;
+}
+
+
+.form label {
+    color:#000;
+    font-size:25px;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    text-align:center;
+    font-weight:700;
+}
+    
+.input {
+    width:100%;
+    height:35px;
+    border-radius:8px;
+    font-size:20px;
+    padding:0 10px;
+    margin-top:8px;
+    margin-bottom:20px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.button {
+    width:100%;
+    height:40px;
+    background-color:#ed2124;
+    font-size:25px;
+    border-radius:10px;
+    cursor:pointer;
+    border:0;
+    font-weight:700;
+    color: #ffff;
+    transition: 0.5s;
+    
+
+}
+
+.button:hover {
+    background-color: darkgreen;
+    transform: scale(1.1);
+    
+}
+
+
+.resultado {
+    background-color:darkgreen;
+    max-width:430px;
+    padding:20px;
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:40px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    border:2px solid;
+    transition: 0.4s;
+    color: #fff;
+    border-style: none;
+
+}
+
+
+.resultado:hover {
+    transform:scale(1.1);
+    
+}
+
+
+.hide {
+    display:none;
+}
+
+
+#data {
+    font-size:20px;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+
+.link_popular {
+    font-size:20px;
+    font-weight:800;
+    text-decoration: none;
+    color: #000000;
+}

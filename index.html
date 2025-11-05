@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="/assets/calendar.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Lembrete popular">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Lembrete Popular</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <h2 id="title">LEMBRETE POPULAR</h2>
+        <img class="logo" src="/assets/logofp.jpeg" alt="logo da farmacia popular" height="350" width="600"/>
+        
+        <form onsubmit="adicionar30Dias(event)" class="form">
+            <label class="data_retirada">Digite a data que retirou os medicamentos:</label>
+            <input class="input"
+                type="date"
+                id="data_retirada"
+                name="data_retirada"
+                required
+            />
+            
+            <label class="telefone">Receba a data por SMS:</label>
+            <input class="input"
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(XX) XXXXX-XXXX"
+                
+            />
+            
+            <label class="email">Receba a data em seu e-mail:</label>
+            <input class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemplo@dominio.com"
+            
+            />
+            
+            <input class="button" type="submit" value="Saiba a data!">
+        </form>
+
+        <section class="resultado hide">
+            <span id="data">Sua próxima retirada será: </span>
+        </section>
+    </main>
+    <br>
+   
+    <br><br>
+
+    <div>
+        <a class="link_popular" href="https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/elenco-de-medicamentos-e-insumos.pdf/view" target="_blank" rel="noreferrer noopener">Conheça o elenco de medicamentos</a>
+    </div>
+
+    <br><br>
+
+    <div>
+        <a class="link_popular" href="https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/farmacias_credenciadas_pfpb_atualizada.xlsx/view" target="_blank" rel="noreferrer noopener">Farmácias Credenciadas ao PFPB</a>
+    </div>
+
+    <br><br>
+
+    <div class="aviso" style="text-align: center; margin: 20px 0;">
+        <p><strong>Aviso Importante:</strong></p>
+        <p>O <strong>Lembrete Popular</strong> não se responsabiliza por datas incorretas de retiradas ou pela não liberação de medicamentos no programa <strong>Farmácia Popular</strong>. As informações fornecidas neste site têm caráter informativo e são baseadas nos dados inseridos pelo usuário. Recomendamos que confirme as datas e a disponibilidade dos medicamentos diretamente na unidade de atendimento do <strong>Farmácia Popular</strong> mais próxima.</p>
+    </div>
+    
+    <br>
+    
+    <script src="script.js"></script>
+
+    <footer>
+        <p style="text-align: center;">© <strong>Lembrete Popular</strong>, 2024. Todos os direitos reservados.</p>
+      </footer>
+</body>
+
+
+</html>
