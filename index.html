@@ -82,11 +82,19 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("eO0VKgJAPHJNqZbSk"); // ou Public Key do painel
-  })();
+
+<script type="module">
+  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+
+  // Inicializa com sua public key (user_id)
+  emailjs.init({
+    publicKey: "eO0VKgJAPHJNqZbSk"
+  });
+
+  // Torna o objeto global (para usar no script.js)
+  window.emailjs = emailjs;
 </script>
+
 
 
 
