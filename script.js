@@ -47,7 +47,7 @@ function enviarDados(telefone, email, data) {
     if (!email) return; // só envia se o usuário tiver digitado um e-mail
 
     // Substitua pelos seus IDs do EmailJS
-    const serviceID = "service_anj15fo";
+    const serviceID = "service_tv3p65w";
     const templateID = "template_jwt2gj8";
 
     const params = {
