@@ -48,7 +48,7 @@ function enviarDados(telefone, email, data) {
 
     // Substitua pelos seus IDs do EmailJS
     const serviceID = "service_anj15fo";
-    const templateID = "";
+    const templateID = "template_jwt2gj8";
 
     const params = {
         telefone: telefone || "Não informado",
