@@ -1,25 +1,20 @@
 function adicionar30Dias(event) {
     event.preventDefault(); // Impede o envio do formulário
 
-    // Obtém a data inserida pelo usuário
     const inputData = document.getElementById('data_retirada').value;
     const telefone = document.getElementById('telefone').value;
     const email = document.getElementById('email').value;
 
     if (inputData) {
-        // Cria um objeto de data a partir da data inserida
         const dataInicial = new Date(inputData);
-
-        // Adiciona 30 dias
         const novaData = new Date(dataInicial);
         novaData.setDate(novaData.getDate() + 31);
 
-        // Formata a nova data para o formato DD/MM/AAAA
         const diaFinal = String(novaData.getDate()).padStart(2, '0');
-        const mesFinal = String(novaData.getMonth() + 1).padStart(2, '0'); // Ajusta o mês para 1-12
+        const mesFinal = String(novaData.getMonth() + 1).padStart(2, '0');
         const anoFinal = novaData.getFullYear();
 
-        // Exibe o resultado na seção
+        // Atualiza o texto do resultado
         const resultado = document.getElementById('data');
         resultado.textContent = `Sua próxima retirada será: ${diaFinal}/${mesFinal}/${anoFinal}`;
 
@@ -27,34 +22,45 @@ function adicionar30Dias(event) {
         const resultadoSection = document.querySelector('.resultado');
         resultadoSection.classList.remove('hide');
 
-        // Envio de dados para o servidor
+        // rola suavemente até o resultado visível
+        resultadoSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+
+        // Envio de dados para o servidor (mantido como no seu código)
         enviarDados(telefone, email, `${diaFinal}/${mesFinal}/${anoFinal}`);
     } else {
         alert("Por favor, insira uma data válida.");
     }
 }
 
-// Função para enviar dados ao servidor
-function enviarDados(telefone, email, data) {
-    const dados = {
-        telefone: telefone,
-        email: email,
-        data: data
-    };
+// Função de máscara de telefone com correção para backspace
+function mascaraTelefone(input) {
+    let valor = input.value.replace(/\D/g, ""); // Remove tudo que não for número
 
-    // Aqui você deve fazer uma requisição AJAX ou fetch para o seu servidor
-    fetch('URL_DO_SEU_SERVIDOR', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Sucesso:', data);
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-    });
+    // Impede mais de 11 dígitos
+    if (valor.length > 11) valor = valor.substring(0, 11);
+
+    // Se o usuário está apagando (menos de 3 dígitos), não aplica máscara
+    if (valor.length <= 2) {
+        input.value = valor;
+    } 
+    else if (valor.length <= 6) {
+        input.value = `(${valor.substring(0, 2)}) ${valor.substring(2)}`;
+    } 
+    else if (valor.length <= 10) {
+        input.value = `(${valor.substring(0, 2)}) ${valor.substring(2, 6)}-${valor.substring(6)}`;
+    } 
+    else {
+        input.value = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}-${valor.substring(7, 11)}`;
+    }
 }
+
+
+
+// Sempre volta para o topo ao recarregar a página
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+

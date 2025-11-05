@@ -30,7 +30,8 @@
                 id="telefone"
                 name="telefone"
                 placeholder="(XX) XXXXX-XXXX"
-                
+                maxlength="15"
+                oninput="mascaraTelefone(this)"
             />
             
             <label class="email">Receba a data em seu e-mail:</label>
@@ -39,7 +40,6 @@
                 id="email"
                 name="email"
                 placeholder="exemplo@dominio.com"
-            
             />
             
             <input class="button" type="submit" value="Saiba a data!">
@@ -60,7 +60,7 @@
     <br><br>
 
     <div>
-        <a class="link_popular" href="https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular/arquivos/farmacias_credenciadas_pfpb_atualizada.xlsx/view" target="_blank" rel="noreferrer noopener">Farmácias Credenciadas ao PFPB</a>
+        <a class="link_popular" href="https://infoms.saude.gov.br/extensions/SEIDIGI_DEMAS_PFPB_ENDERECOS/index.html" target="_blank" rel="noreferrer noopener">Farmácias Credenciadas ao PFPB</a>
     </div>
 
     <br><br>
@@ -76,8 +76,6 @@
 
     <footer>
         <p style="text-align: center;">© <strong>Lembrete Popular</strong>, 2024. Todos os direitos reservados.</p>
-      </footer>
+    </footer>
 </body>
-
-
 </html>
