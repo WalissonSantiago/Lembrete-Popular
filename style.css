@@ -205,30 +205,3 @@ footer {
 #toggleTheme:hover {
     transform: scale(1.1);
 }
-
-/* ---------- MODO ESCURO ---------- */
-.dark {
-    background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
-}
-
-.dark .container {
-    background: rgba(30, 30, 30, 0.95);
-    color: #fff;
-}
-
-.dark .form label,
-.dark .aviso p,
-.dark footer {
-    color: #ddd;
-}
-
-.dark .input {
-    background: #2a2a2a;
-    color: #fff;
-    border: 1px solid #555;
-}
-
-.dark .resultado {
-    background: linear-gradient(90deg, #005a1f, #007a2e);
-}
-}
