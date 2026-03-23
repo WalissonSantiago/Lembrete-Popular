@@ -98,7 +98,7 @@ window.onbeforeunload = function () {
 };
 
 // =============================
-// BOTÃO MODO DIA/NOITE (corrigido)
+// BOTÃO MODO DIA/NOITE
 // =============================
 window.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("toggleTheme");
