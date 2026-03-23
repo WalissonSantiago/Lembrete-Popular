@@ -98,24 +98,29 @@ window.onbeforeunload = function () {
 };
 
 // =============================
-// BOTÃO MODO DIA/NOITE
+// BOTÃO MODO DIA/NOITE (corrigido)
 // =============================
-const toggleBtn = document.getElementById("toggleTheme");
+window.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggleTheme");
 
-// Carregar preferência salva
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-    toggleBtn.textContent = "☀️";
-}
+    // segurança (caso não encontre o botão)
+    if (!toggleBtn) return;
 
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
+    // Carregar preferência salva
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
         toggleBtn.textContent = "☀️";
-    } else {
-        localStorage.setItem("theme", "light");
-        toggleBtn.textContent = "🌙";
     }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
+    });
 });
