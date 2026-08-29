@@ -47,5 +47,6 @@ A data exibida pelo sistema pode não representar a data efetivamente disponíve
 Este projeto é livre para usar e modificar.
 
 ---
+## 👨‍💻 Autor
 
 Feito por **Walisson Santiago**.
