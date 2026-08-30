@@ -49,4 +49,4 @@ Este projeto é livre para usar e modificar.
 ---
 ## 👨‍💻 Autor
 
-Feito por **Walisson Santiago**.
+Feito por **Walisson Santiago**. walissonrp@proton.me
